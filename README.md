@@ -1,4 +1,4 @@
-# Psychgenerator: Artificially Intelligent Language with Personality
+# PsychGenerator: Artificially Intelligent Language with Personality
 
 This is the code base for the PsychGenerator, a language generative model with the control of underlying psychology constructs, with additional demographics.
 
