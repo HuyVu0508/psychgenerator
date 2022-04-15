@@ -4,11 +4,11 @@ This is the code base for the PsychGenerator, a language generative model with t
 
 ## Codebase overview
 Below is the descriptions of files in the repository.
-`./data/messages.csv`: file containing three columns "user_id", "message_id" and "message", indicates users and their texts messages.
-`./data/variables.csv`: file containing two columns "user_id", "variable1", "variable2", "variable3", indicates the psychological traits score value for each user
-`./src`: folder containing source codes for training model and generating.
-`./run_train.py`: Python interface to run training model.
-`./run_generate.py`: Python interface to run generating texts from trained model.
+*`./data/messages.csv`: file containing three columns "user_id", "message_id" and "message", indicates users and their texts messages.
+*`./data/variables.csv`: file containing two columns "user_id", "variable1", "variable2", "variable3", indicates the psychological traits score value for each user
+*`./src`: folder containing source codes for training model and generating.
+*`./run_train.py`: Python interface to run training model.
+*`./run_generate.py`: Python interface to run generating texts from trained model.
 
 ## Installations requirements
 In order to run our code, the following Python libraries and other dependents are required.
