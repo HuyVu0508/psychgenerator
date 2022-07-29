@@ -42,7 +42,7 @@ After training, PsychGenerator can be used to generate text corresponding to all
    python3 ./run_generate.py \
 	--messages_csv ./data/messages.csv \
 	--variables_csv ./data/variables.csv \
-	--output_dir "./trained_models" \
+	--output_dir ./trained_models \
 	--generate_num 5 \
 	--prompting_text "I like to"
 ```
@@ -50,7 +50,7 @@ After training, PsychGenerator can be used to generate text corresponding to all
 In order to control for demograhics (e.g., age, gender). Add arguments `demographics_variable` and `k_value_demographics` to the command as below. Argument `demographics_variable` indicates the name of the demographics variable. Argument `k_value_demographics` indicates the k-value from which the model will generate text from. In the example below, variable3 is the demographics variable, while variable1 and variable2 are psychological trait variabsle.
 ```
    python3 ./run_generate.py \
-	--output_dir "./trained_models" \
+	--output_dir ./trained_models \
 	--generate_num 5 \
 	--prompting_text "I like to" \
 	--k_value 3 \
