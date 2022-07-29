@@ -1,11 +1,11 @@
 # PsychGenerator: Artificially Intelligent Language with Personality
-
-This is the source code for PsychGenerator, a language generative model with the control of underlying psychology constructs, with additional demographics.
+This is the source code repository for the paper "Artificially Intelligent Language with Personality". This work is under submission to PNAS.
+This work proposes the architecture Psychgenerator - an transformer-based AI language model that is able to reflect individual characteristics in its text output. PsychGenerator is trained to be able to reflect any of the Big Five personality traits (openness, conscientiousness, extraversion, agreeableness, and neuroticism) as well as mental health variables (depression and life satisfaction), while optionally being conditioned on demographics (age and gender).
 
 ## Codebase overview
 Below are the descriptions of files and directories in the repository.
 * `./data/messages.csv`: file containing three columns "user_id", "message_id" and "message", indicating users and their text messages.
-* `./data/variables.csv`: file containing column "user_id" and variables columns, such as "variable1", "variable2", "variable3", indicating the psychological traits score value for each user
+* `./data/variables.csv`: file containing column "user_id" and variables columns, such as "variable1", "variable2", "variable3", indicating the psychological traits score and/or demographics variables value for each user.
 * `./src`: directory containing source codes for model architecture, model training and inferencing.
 * `./run_train.py`: Python interface to run training model.
 * `./run_generate.py`: Python interface to run generating text from trained model.
@@ -19,14 +19,14 @@ In order to run our code, the following Python libraries and other dependents ar
 ## Instructions for training and generating text with PsychGenerator
 
 ### Training PsychGenerator
-To train our model, the first step is pre-processing and creating training data, which is the "estimated" scores for each message. A directory `./processed_data` will be created containing the processed training and validating data. 
+To train our model, the first step is pre-processing and creating training data, which is the "estimated" scores for each message. The following command execute these steps. A directory `./processed_data` will be created containing the processed training and validating data. 
 ```
    python3 ./run_train.py \
 	--stage process_data \
 	--messages_csv ./data/messages.csv \
 	--variables_csv ./data/variables.csv
 ```
-After obtaining the training data, we train PsychGenerator by running the following command. There are many configurations for the training process that can be modifed (e.g., number of epochs, learning rates). Run `python3 ./run_train.py -h` for more information. The code reads the processed data from `processed_data` directory then begins the training process. A directory `./trained_models` will be created containing the trained model.
+After obtaining the training data, we train PsychGenerator by running the following command. There are many configurations for the training process that can be modifed (e.g., number of epochs, learning rates). Run `python3 ./run_train.py -h` for more information. The code reads the processed data from `./processed_data` directory then begins the training process. A directory `./trained_models` will be created containing the trained model.
 ```
    python3 ./run_train.py \
 	--stage train_psychgenerator \
@@ -36,7 +36,7 @@ After obtaining the training data, we train PsychGenerator by running the follow
 ```
 
 ### Generating text with PsychGenerator
-After training, PsychGenerator can be used to generate text corresponding to all interested dimensions, using the following commands. The code loops through all variables and generates text from the high and low value of that variable. There are many configurations for the generating process that can be modifed (e.g., number of generated sentences, nuclous sampling parameters). Run `python3 ./run_generate.py -h` for more information.
+After training, PsychGenerator can be used to generate text corresponding to all interested dimensions, using the following command. The code loops through all variables and generates text from the high and low value of each variable. There are many configurations for the generating process that can be modifed (e.g., number of generated sentences, nuclous sampling parameters). Run `python3 ./run_generate.py -h` for more information.
 ```
    python3 ./run_generate.py \
 	--messages_csv ./data/messages.csv \
@@ -46,7 +46,7 @@ After training, PsychGenerator can be used to generate text corresponding to all
 	--prompting_text "I like to"
 ```
 
-In order to control for demograhics (e.g., age, gender). Add arguments `demographics_variable` and `k_value_demographics` to the command as below. Argument `demographics_variable` indicates the name of the demographics variable. Argument `k_value_demographics` indicates the k-value from which the model will generate text from. In the example below, variable3 is the demographics variable, while variable1 and variable2 are psychological trait variable.
+In order to control for demograhics (e.g., age, gender). Add arguments `demographics_variable` and `k_value_demographics` to the command as below. Argument `demographics_variable` indicates the name of the demographics variable. Argument `k_value_demographics` indicates the k-value from which the model will generate text from. In the example below, variable3 is the demographics variable, while variable1 and variable2 are psychological trait variabsle.
 ```
    python3 ./run_generate.py \
 	--output_dir "./trained_models" \
