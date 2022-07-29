@@ -23,14 +23,14 @@ In order to run our code, the following Python libraries and other dependents ar
 To train our model, the first step is pre-processing and creating training data, which is the "estimated" scores for each message. The following command execute these steps. A directory `./processed_data` will be created containing the processed training and validating data. 
 ```
    python3 ./run_train.py \
-	--stage process_data \
+	--stage "process_data" \
 	--messages_csv ./data/messages.csv \
 	--variables_csv ./data/variables.csv
 ```
 After obtaining the training data, we train PsychGenerator by running the following command. There are many configurations for the training process that can be modifed (e.g., number of epochs, learning rates). Run `python3 ./run_train.py -h` for more information. The code reads the processed data from `./processed_data` directory then begins the training process. A directory `./trained_models` will be created containing the trained model.
 ```
    python3 ./run_train.py \
-	--stage train_psychgenerator \
+	--stage "train_psychgenerator" \
 	--messages_csv ./data/messages.csv \
 	--variables_csv ./data/variables.csv \
 	--num_train_epochs 5
