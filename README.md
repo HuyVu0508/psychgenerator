@@ -1,5 +1,5 @@
 # PsychGenerator: Artificially Intelligent Language with Personality
-This is the source code repository for the paper "Artificially Intelligent Language with Personality". This work is currently under submission to PNAS.
+This is the source code repository for the paper "Artificially Intelligent Language with Personality". This work is currently under submission.
 
 This work proposes the architecture Psychgenerator - an transformer-based AI language model that is able to reflect individual characteristics in its text output. PsychGenerator is trained to be able to reflect any of the Big Five personality traits (openness, conscientiousness, extraversion, agreeableness, and neuroticism) as well as mental health variables (depression and life satisfaction), while optionally being conditioned on demographics (age and gender). The live-demo of our model can be found at: http://3.12.111.1 (not for distributing until manuscript acceptance). 
 
