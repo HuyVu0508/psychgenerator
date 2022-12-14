@@ -14,8 +14,10 @@ Below are the descriptions of files and directories in the repository.
 * `./run_generate.py`: Python interface to run generating text from trained model.
 
 ## Installations requirements
-Operating systems: Linux (Ubuntu 16.04), MacOS, Windows
-Python: 3.6.0+
+Operating systems: Linux (Ubuntu 16.04), MacOS, Windows.
+
+Python: 3.6.0+.
+
 In order to run our code, the following Python libraries and other dependents are required.
 * Python library transformers: https://huggingface.co/docs/transformers/index (2.3.0+)
 * Python library DLATK: https://dlatk.wwbp.org/index.html (1.1.6+)
